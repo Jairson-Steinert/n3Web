@@ -21,20 +21,22 @@ Crie e ative um ambiente virtual (opcional, mas recomendado):
 
 Instale as dependências listadas no arquivo `requirements.txt`:
 
-```bash
+
 pip install -r requirements.txt
+
+
 Executando a Aplicação
+
 Com o ambiente virtual ativado e as dependências instaladas, inicie o servidor Flask:
 
-bash
-Copiar código
 python app.py
 Acesse a aplicação em seu navegador no endereço:
 
-plaintext
-Copiar código
 http://127.0.0.1:5000
-Funcionalidades da Aplicação
+
+
+## Funcionalidades da Aplicação
+
 Autenticação e Perfis de Usuário
 A aplicação simula uma base de usuários com dois perfis:
 
@@ -73,41 +75,59 @@ O idioma padrão é pt_BR. Para mudar o idioma, utilize os ícones de bandeira n
 /change_language/es
 As traduções encontram-se no diretório translations/.
 
-Paginação
+## Paginação
 A funcionalidade de paginação está implementada em ao menos duas páginas de listagem. Um exemplo é a página de usuários:
 
 Rota: /users
 Nesta página, você verá uma lista paginada de usuários. Através dos links de paginação, é possível navegar entre diferentes páginas de resultados.
 
-Testes Funcionais
-Para o professor testar a aplicação, siga os passos:
+## Testes Funcionais
 
 Testar o Login e Proteção de Rotas:
 Acesse a página /login.
 Faça login como user:
 Usuário: user
 Senha: userpass
+
 Verifique se consegue acessar /users (deve funcionar) e se não consegue acessar /admin (deve dar erro 403).
+
 Faça logout e tente acessar rotas protegidas diretamente para confirmar se o redirecionamento para /login ocorre.
+
 Em seguida, faça login como admin:
+
 Usuário: admin
 Senha: adminpass
+
 Verifique o acesso à página /admin (deve funcionar) e também à /users.
+
 Testar Internacionalização:
+
 Use os links de idioma na navbar ou acesse:
+
 /change_language/en
 /change_language/es
 /change_language/pt_BR
+
 Confira se a interface (menus, títulos, textos) é exibida no idioma selecionado.
+
 Testar Paginação:
+
 Acesse /users.
+
 Navegue pelas páginas através dos links de paginação.
+
 Verifique se a lista de usuários muda conforme a página selecionada.
+
 Todos esses testes podem ser executados manualmente pelo navegador, sem a necessidade de ferramentas extras.
 
-Estrutura do Projeto
-plaintext
-Copiar código
+## Certifique-se de que a estrutura do diretório translations esteja configurada conforme o Flask-Babel exige, com arquivos .po e .mo devidamente compilados.
+
+Licença
+Este projeto está licenciado sob a licença MIT. Consulte o arquivo LICENSE para mais detalhes.
+
+## Estrutura do Projeto
+```bash
+
 .
 ├── app.py
 ├── requirements.txt
@@ -133,7 +153,5 @@ Copiar código
         └── LC_MESSAGES
             ├── messages.po
             └── messages.mo
-Certifique-se de que a estrutura do diretório translations esteja configurada conforme o Flask-Babel exige, com arquivos .po e .mo devidamente compilados.
 
-Licença
-Este projeto está licenciado sob a licença MIT. Consulte o arquivo LICENSE para mais detalhes.
+
